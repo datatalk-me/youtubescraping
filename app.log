@@ -1,5 +1,44 @@
-werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "POST /videos HTTP/1.1" 200 -
-werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/css/style-starter.css HTTP/1.1[0m" 304 -
-werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/js/theme-change.js HTTP/1.1[0m" 304 -
-werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/js/bootstrap.min.js HTTP/1.1[0m" 304 -
-werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/js/jquery-3.3.1.min.js HTTP/1.1[0m" 304 -
+app - ERROR - Exception on /videos [POST]
+Traceback (most recent call last):
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/sandeep/Desktop/youtubescrape/app.py", line 350, in videos
+    scroll_page()
+  File "/home/sandeep/Desktop/youtubescrape/app.py", line 57, in scroll_page
+    html = driver.find_element(by=By.TAG_NAME,value="html")
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 855, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 428, in execute
+    self.error_handler.check_response(response)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=105.0.5195.102)
+Stacktrace:
+#0 0x55f7e753f403 <unknown>
+#1 0x55f7e7345778 <unknown>
+#2 0x55f7e73267f8 <unknown>
+#3 0x55f7e739df6b <unknown>
+#4 0x55f7e73ad2a5 <unknown>
+#5 0x55f7e739a8f3 <unknown>
+#6 0x55f7e73700d8 <unknown>
+#7 0x55f7e7371205 <unknown>
+#8 0x55f7e7586e3d <unknown>
+#9 0x55f7e7589db6 <unknown>
+#10 0x55f7e757013e <unknown>
+#11 0x55f7e758a9b5 <unknown>
+#12 0x55f7e7564970 <unknown>
+#13 0x55f7e75a7228 <unknown>
+#14 0x55f7e75a73bf <unknown>
+#15 0x55f7e75c1abe <unknown>
+#16 0x7f010191c609 <unknown>
+

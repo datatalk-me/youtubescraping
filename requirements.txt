@@ -55,3 +55,4 @@ Werkzeug==2.2.2
 wsproto==1.2.0
 youtube-dl==2021.12.17
 zipp==3.8.1
+python == 3.8.10
