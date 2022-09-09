@@ -1,0 +1,51 @@
+app - ERROR - Exception on /videos [POST]
+Traceback (most recent call last):
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/flask_cors/decorator.py", line 128, in wrapped_function
+    resp = make_response(f(*args, **kwargs))
+  File "/home/sandeep/Desktop/youtubescrape/app.py", line 351, in videos
+    channel_urls(url)
+  File "/home/sandeep/Desktop/youtubescrape/app.py", line 231, in channel_urls
+    WebDriverWait(driver, 30).until(EC.presence_of_element_located((By.XPATH, subscribe_button)))
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/support/wait.py", line 81, in until
+    value = method(self._driver)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/support/expected_conditions.py", line 64, in _predicate
+    return driver.find_element(*locator)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 855, in find_element
+    return self.execute(Command.FIND_ELEMENT, {
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/remote/webdriver.py", line 428, in execute
+    self.error_handler.check_response(response)
+  File "/home/sandeep/Desktop/completeYoutubeapp/env/lib/python3.8/site-packages/selenium/webdriver/remote/errorhandler.py", line 243, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.WebDriverException: Message: chrome not reachable
+  (Session info: chrome=105.0.5195.102)
+Stacktrace:
+#0 0x55df36ce0403 <unknown>
+#1 0x55df36ae664b <unknown>
+#2 0x55df36ad6d24 <unknown>
+#3 0x55df36ac7e2e <unknown>
+#4 0x55df36acc962 <unknown>
+#5 0x55df36ad1946 <unknown>
+#6 0x55df36ae7b72 <unknown>
+#7 0x55df36b4e2f1 <unknown>
+#8 0x55df36b3b8f3 <unknown>
+#9 0x55df36b110d8 <unknown>
+#10 0x55df36b12205 <unknown>
+#11 0x55df36d27e3d <unknown>
+#12 0x55df36d2adb6 <unknown>
+#13 0x55df36d1113e <unknown>
+#14 0x55df36d2b9b5 <unknown>
+#15 0x55df36d05970 <unknown>
+#16 0x55df36d48228 <unknown>
+#17 0x55df36d483bf <unknown>
+#18 0x55df36d62abe <unknown>
+#19 0x7eff7f658609 <unknown>
+
+werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 22:23:11] "[35m[1mPOST /videos HTTP/1.1[0m" 500 -
