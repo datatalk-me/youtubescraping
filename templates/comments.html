@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+<div class="container mt-5">
+
+    <div class="row  d-flex justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="headings d-flex justify-content-between align-items-center mb-3">
+
+                <div class="grids5-info">
+                    <a href="#blog-single" class="d-block zoom"><img src="{{thumbnail}}" alt="" height="200px" width="200px" class="img-fluid radius-image news-image"></a>
+                </div>
+                <div class="text-right">
+                    <a href="#blog-single" class="blog-desc1">{{video_title[0]}}</a>
+                        
+                    </a>
+                    <div class="author align-items-center mt-3 mb-1">
+                        <a href="#author">posted</a> by <a href="#url">{{channel_name[0]}}</a>
+                    </div>
+                    <ul class="blog-meta">
+                        <li class="meta-item blog-lesson">
+                            <span class="meta-value">posted on: {{posted_date[0]}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <br>
+            <h4>Comments:{{ comment_count }}</h4>
+            <br>
+
+            {% for i in comments %}
+
+            <div class="card p-3">
+
+                <div class="d-flex justify-content-between align-items-center">
+
+                    <div class="user d-flex flex-row align-items-center">
+
+                        <span><small class="font-weight-bold text-primary">{{i.username}}</small> <small class="font-weight-bold">{{i.comment}}</small></span>
+                  
+                    </div>
+                </div>
+                <div class="action d-flex justify-content-between mt-2 align-items-center">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <br><br>
+    </div>
+    
+</div>
+<br>
+<br>
+<br>
+
+
+
+
+{% endblock %}

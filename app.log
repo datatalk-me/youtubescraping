@@ -1,0 +1,5 @@
+werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "POST /videos HTTP/1.1" 200 -
+werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/css/style-starter.css HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/js/theme-change.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/js/bootstrap.min.js HTTP/1.1[0m" 304 -
+werkzeug - INFO - 127.0.0.1 - - [09/Sep/2022 18:08:36] "[36mGET /static/assets/js/jquery-3.3.1.min.js HTTP/1.1[0m" 304 -

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+<nav id="breadcrumbs" class="breadcrumbs">
+    <div class="container page-wrapper">
+      <a href="/index">Home</a> / <span class="breadcrumb_last" aria-current="page">About</span>
+    </div>
+  </nav>
+  <!-- contact-form 2 -->
+  <section class="w3l-contact-2 py-5">
+    <div class="container py-lg-12 py-md-4">
+      <h3 class="section-title-left">About project </h3>
+        <div class="contact-left">
+          <h3 class="mb-3">Youtube Scraper</h3>
+          <p>I'm sandeep and i have used selenium and cromedriver to scrape youtube video details. </p>
+          <li>
+            <p>first i scraped 50 video urls and went trough each youtube url and scraped all the details of that video </p>
+            <p>Then i scraped about details from youtube </p>
+            <p>if you want to download vidoe,thumbnail and subtile click on Download video button</p>
+            <p>if you want scrape comments of each video when you click on scrape comments button then it will redirect to comments page</p>
+          </li>
+          
+          <div class="cont-details">
+            <div class="cont-top margin-up">
+              <div class="cont-left text-center">
+                <span class="fa fa-envelope-o"></span>
+              </div>
+              <div class="cont-right">
+                <h6>Email Me</h6>
+                <p>You can mail me for any queries: <a href="mailto:example@mail.com" class="mail">sandeeprayudu25@mail.com</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+     
+  </section>
+
+
+{% endblock %}

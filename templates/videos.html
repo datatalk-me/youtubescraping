@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+
+
+
+{% block content %}
+
+<div class="w3l-homeblock1 py-5">
+    <div class="container pt-lg-5 pt-md-4">
+        <!-- block -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h3 class="section-title-left">Youtube Channel Details </h3>
+                
+                <div class="row">
+                    <div class="col-lg-5 col-md-6 item">
+                    {% for info in channel_info %}
+                        {% for about_info in about_channel %}
+                        <div class="list-view list-view1">
+                            <div class="grids5-info">
+                                <a href="#blog-single" class="d-block zoom"><img src="{{ info.channel_image }} " alt=""
+                                        class="img-fluid radius-image news-image"></a>
+                                <div class="blog-info text-right">
+                                    <a href="#blog-single" class="blog-desc1">{{ info.channel_name }}</a>
+                                    </a>
+                                    
+                                    <li class="mb-2 mb-xl-3 display-28"><i class="fa fa-bell" aria-hidden="true"></i>  {{ info.subscribers_count }}</li>
+                                    <li class="mb-2 mb-xl-3 display-28"><i class="fa fa-eye" aria-hidden="true"></i>   {{ about_info.views}} </li>
+                                    <li class="mb-2 mb-xl-3 display-28"><i class="fa fa-handshake-o" aria-hidden="true"></i> {{ about_info.join}} </li>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 pt-5">
+            <div class="col-lg-12 most-recent">
+                <h3 class="section-title-left">Channel Description </h3>
+                <div class="list-view ">
+                    <div class="grids5-info img-block-mobile">
+        
+                        <div class="card-body">
+                            <textarea name="overflow-auto" id="" cols="117" rows="8">{{ about_info.description}}
+                            </textarea> 
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+        {% endfor %}
+        <div class="row mt-5 pt-5">
+            <div class="col-lg-12 most-recent">
+                <h3 class="section-title-left">Youtube Videos </h3>
+                <div class="list-view ">
+                    {% for video in video_info_list %}
+                    <div class="grids5-info img-block-mobile">
+                        <div class="blog-info align-self">
+                            
+                            <a href="#blog-single" class="blog-desc mt-0">{{ video.video_title }}</a>
+                            </a>
+                            <p>{{video.video_description}}</p>
+                            <a href="{{ video.video_url }}"><li class="mb-2 mb-xl-3 display-28"><i class="fa fa-link" aria-hidden="true"></i> video url</li></a>
+                            <form action="/download_video" method="post">
+                                <input type="hidden" name="video_id" value="{{ video.video_id }}">
+                                <input type="submit" class="btn btn-outline-info" value="Download Video">
+                            </form>
+                            <br>
+                            <li class="mb-2 mb-xl-3 display-28"><i class="fa fa-film" aria-hidden="true"></i>  {{ video.video_genre }}</li>
+                            <li class="mb-2 mb-xl-3 display-28"><i class="fa fa-thumbs-up" aria-hidden="true"></i>  {{ video.video_likes }} Likes</li>
+                            <p>Width: {{ video.video_width}} | Height: {{ video.video_height}} | Interactions: {{ video.video_interactions }}</p>
+                            <div class="author align-items-center mt-3 mb-1">
+                                <a href="#author"> Posted </a> by <a href="#url">{{ video.video_channel_name}}</a>
+                            </div>
+                            <ul class="blog-meta">
+                                <li class="meta-item blog-lesson">
+                                    <span class="meta-value"> Published on :{{ video.video_publish_date }}</span>
+                                </li>
+                            </ul>
+                            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <a href="/videos/{{video.video_id}}"><button class="btn btn-info" type="button">Scrape comments</button></a>
+                            </div>
+                            
+                        </div>
+                        <a href="#blog-single" class="d-block zoom mt-md-0 mt-3"><img src="{{ video.video_thumbnail}} "
+                                alt="" class="img-fluid radius-image news-image"></a>
+                    </div>
+                    <br><br>
+                    {% endfor %}
+
+               
+
+                  
+                    <!-- pagination -->
+                    <div class="pagination-wrapper mt-5">
+                        <ul class="page-pagination">
+                            <li><span aria-current="page" class="page-numbers current">1</span></li>
+                            <li><a class="page-numbers" href="#url">2</a></li>
+                            <li><a class="page-numbers" href="#url">3</a></li>
+                            <li><a class="page-numbers" href="#url">4</a></li>
+                            <li><a class="page-numbers" href="#url">....</a></li>
+                            <li><a class="page-numbers" href="#url">15</a></li>
+                            <li><a class="next" href="#url"><span class="fa fa-angle-right"></span></a></li>
+                        </ul>
+                    </div>
+                    <!-- //pagination -->
+                <br><br><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+        
+        
+ 
+
+
+
+{% endblock %}
+
