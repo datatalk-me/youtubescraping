@@ -39,7 +39,9 @@ def videos():
         youtuber = request.form['search']
 
 
-        driver = webdriver.Chrome(executable_path=r'/home/sandeep/Desktop/youtubeTask/chromedriver')
+        #driver = webdriver.Chrome(executable_path=r'/home/sandeep/Desktop/youtubeTask/chromedriver')
+
+        driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'))
         logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 
@@ -371,7 +373,7 @@ def videos():
 @cross_origin()
 def comments(id):
 
-    chrome_path = "/home/sandeep/Desktop/youtubeTask/chromedriver"
+    #chrome_path = "/home/sandeep/Desktop/youtubeTask/chromedriver"
     url = f"https://www.youtube.com/watch?v={id}"
     thumbnail = f'https://i.ytimg.com/vi/{id}/maxresdefault.jpg'
 
@@ -390,7 +392,7 @@ def comments(id):
 
     # --------------- PAGE ACCESS ---------------
     # accessing the page holding comments (here: youtube)
-    driver = webdriver.Chrome(executable_path=chrome_path)
+    driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'))
     driver.get(page_url)
     time.sleep(2)  # give the page some time to load
 
