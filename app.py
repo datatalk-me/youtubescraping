@@ -46,9 +46,6 @@ def videos():
         driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
 
 
-        #driver = webdriver.Chrome(executable_path=r'/home/sandeep/Desktop/youtubeTask/chromedriver')
-
-        #driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'))
         logging.basicConfig(filename='app.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s')
 
 
