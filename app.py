@@ -1,11 +1,6 @@
-from crypt import methods
-from distutils.log import debug
-from os import mkdir
-from venv import create
-from flask import Flask, render_template, request, redirect, url_for,send_file
+from flask import Flask, render_template, request
 from flask_cors import CORS, cross_origin
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 import mysql.connector as mysql
@@ -13,10 +8,7 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
-import pandas as pd
 from urllib import parse
-import csv
-import io
 import pymongo
 import dns
 import youtube_dl
