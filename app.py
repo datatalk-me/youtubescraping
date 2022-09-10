@@ -373,11 +373,12 @@ def comments(id):
     url = f"https://www.youtube.com/watch?v={id}"
     thumbnail = f'https://i.ytimg.com/vi/{id}/maxresdefault.jpg'
 
-    try:
-        client = pymongo.MongoClient("mongodb+srv://sandeep:sandeep001@cluster0.l25wu2o.mongodb.net/?retryWrites=true&w=majority")
-        db = client['test']
-    except:
-        print("Error connecting to database")
+    # try:
+    #     client = pymongo.MongoClient("mongodb+srv://sandeep:sandeep001@cluster0.l25wu2o.mongodb.net/?retryWrites=true&w=majority")
+    #     db = client['test']
+    # except:
+    #     print("Error connecting to database")
+    
     
     
 
@@ -388,7 +389,12 @@ def comments(id):
 
     # --------------- PAGE ACCESS ---------------
     # accessing the page holding comments (here: youtube)
-    driver = webdriver.Chrome(executable_path=os.environ.get('CHROMEDRIVER_PATH'))
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
     driver.get(page_url)
     time.sleep(2)  # give the page some time to load
 
