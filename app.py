@@ -101,7 +101,7 @@ def videos():
             videos = driver.find_elements(by=By.CLASS_NAME,value="style-scope ytd-grid-video-renderer")
 
             # scraping top 50 urls 
-            for video in videos[:3]:
+            for video in videos[:2]:
                 try:
                     video_url = video.find_element(by=By.TAG_NAME,value="a").get_attribute("href")
                 except Exception as e:
